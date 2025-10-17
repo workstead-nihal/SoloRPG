@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Solo Leveling RPG</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Solo Leveling RPG</h1>
+
+    <div id="stats">
+        <p>HP: {{ player.hp }}/{{ player.max_hp }}</p>
+        <p>Level: {{ player.level }}</p>
+        <p>Gold: {{ player.gold }}</p>
+    </div>
+
+    <div id="actions">
+        <form method="post">
+            <button name="action" value="attack">Attack</button>
+            <button name="action" value="heal">Heal</button>
+        </form>
+    </div>
+
+    <div id="messages">
+        <p>{{ message }}</p>
+    </div>
+<div id="monster">
+    <h3>{{ monster.name }}</h3>
+    <p>HP: {{ monster.hp }}</p>
+</div>
+
+<div id="player">
+    <h3>{{ player.name }}</h3>
+    <p>HP: {{ player.hp }}/{{ player.max_hp }}</p>
+    <p>Level: {{ player.level }}</p>
+    <p>Gold: {{ player.gold }}</p>
+</div>
+
+<div id="actions">
+    <form method="post">
+        <button name="action" value="attack">Attack</button>
+        <button name="action" value="heal">Heal</button>
+    </form>
+</div>
+
+<div id="messages">
+    {{ message|safe }}
+</div>
+
+</body>
+</html>
